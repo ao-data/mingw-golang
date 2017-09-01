@@ -1,7 +1,7 @@
 FROM ubuntu:zesty
 
 # gcc for cgo
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --no-install-recommends \
 		g++ \
 		gcc \
 		libc6-dev \
@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		ssh \
 		mingw-w64 \
 		nsis \
+		wine-stable \
+		wine32 \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GOLANG_VERSION 1.9
