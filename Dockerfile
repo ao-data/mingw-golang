@@ -17,7 +17,7 @@ RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --no-in
 		wine32 \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.9
+ENV GOLANG_VERSION 1.14
 
 RUN cd /usr/local && wget https://storage.googleapis.com/golang/go${GOLANG_VERSION}.linux-amd64.tar.gz && \
     tar zxf go${GOLANG_VERSION}.linux-amd64.tar.gz && rm go${GOLANG_VERSION}.linux-amd64.tar.gz && \
