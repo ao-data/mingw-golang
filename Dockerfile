@@ -1,4 +1,4 @@
-FROM ubuntu:zesty
+FROM ubuntu:latest
 
 # gcc for cgo
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --no-install-recommends \
