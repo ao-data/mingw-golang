@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # gcc for cgo
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --no-install-recommends \
 		g++ \
